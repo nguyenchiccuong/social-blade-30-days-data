@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/get-30-days-data", (req, res) => {
+  res.setTimeout(200)
   const source = req.query.source;
   const username = req.query.username;
   get30DaysData(source, username)
